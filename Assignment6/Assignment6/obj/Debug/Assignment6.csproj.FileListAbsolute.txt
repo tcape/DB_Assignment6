@@ -1,0 +1,7 @@
+C:\Users\tcape\source\repos\Assignment6\Assignment6\bin\Debug\Assignment6.exe.config
+C:\Users\tcape\source\repos\Assignment6\Assignment6\bin\Debug\Assignment6.exe
+C:\Users\tcape\source\repos\Assignment6\Assignment6\bin\Debug\Assignment6.pdb
+C:\Users\tcape\source\repos\Assignment6\Assignment6\obj\Debug\Assignment6.csproj.CoreCompileInputs.cache
+C:\Users\tcape\source\repos\Assignment6\Assignment6\obj\Debug\Assignment6.exe
+C:\Users\tcape\source\repos\Assignment6\Assignment6\obj\Debug\Assignment6.pdb
+C:\Users\tcape\source\repos\Assignment6\Assignment6\obj\Debug\Assignment6.csprojAssemblyReference.cache
