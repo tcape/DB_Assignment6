@@ -51,22 +51,14 @@ namespace Assignment6
         {
             switch (FieldChoice)
             {
-                case 1: // FirstName
-                    UpdateFirstNameById(customerId); break;
-                case 2: // LastName
-                    UpdateLastNameById(customerId); break;
-                case 3: // Phone
-                    UpdatePhoneById(customerId); break;
-                case 4: // Email
-                    UpdateEmailById(customerId); break;
-                case 5: // Street
-                    UpdateStreetById(customerId); break;
-                case 6: // City
-                    UpdateCityById(customerId); break;
-                case 7: // State
-                    UpdateStateById(customerId); break;
-                case 8: // Zip
-                    UpdateZipCodeById(customerId); break;
+                case 1: UpdateFirstNameById(customerId); break;
+                case 2: UpdateLastNameById(customerId); break;
+                case 3: UpdatePhoneById(customerId); break;
+                case 4: UpdateEmailById(customerId); break;
+                case 5: UpdateStreetById(customerId); break;
+                case 6: UpdateCityById(customerId); break;
+                case 7: UpdateStateById(customerId); break;
+                case 8: UpdateZipCodeById(customerId); break;
             }
         }
 
@@ -74,22 +66,14 @@ namespace Assignment6
         {
             switch (FieldChoice)
             {
-                case 1: // FirstName
-                    UpdateFirstNameByName(firstName, lastName); break;
-                case 2: // LastName
-                    UpdateLastNameByName(firstName, lastName); break;
-                case 3: // Phone
-                    UpdatePhoneByName(firstName, lastName); break;
-                case 4: // Email
-                    UpdateEmailByName(firstName, lastName); break;
-                case 5: // Street
-                    UpdateStreetByName(firstName, lastName); break;
-                case 6: // City
-                    UpdateCityByName(firstName, lastName); break;
-                case 7: // State
-                    UpdateStateByName(firstName, lastName); break;
-                case 8: // Zip
-                    UpdateZipCodeByName(firstName, lastName); break;
+                case 1: UpdateFirstNameByName(firstName, lastName); break;
+                case 2: UpdateLastNameByName(firstName, lastName); break;
+                case 3: UpdatePhoneByName(firstName, lastName); break;
+                case 4: UpdateEmailByName(firstName, lastName); break;
+                case 5: UpdateStreetByName(firstName, lastName); break;
+                case 6: UpdateCityByName(firstName, lastName); break;
+                case 7: UpdateStateByName(firstName, lastName); break;
+                case 8: UpdateZipCodeByName(firstName, lastName); break;
             }
         }
 
@@ -120,7 +104,7 @@ namespace Assignment6
                         Console.WriteLine("\n\n");
                         while (reader.Read())
                         {
-                            Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName Name: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
+                            Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
                                               $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                               $"Zip: {reader["ZipCode"]}");
                             Console.WriteLine();
@@ -164,7 +148,7 @@ namespace Assignment6
                     while (reader.Read())
                     {
                        
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName Name: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
+                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
                                           $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                           $"Zip: {reader["ZipCode"]}");
                         Console.WriteLine();
@@ -211,7 +195,7 @@ namespace Assignment6
                     Console.WriteLine("\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName Name: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
+                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
                                          $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                          $"Zip: {reader["ZipCode"]}");
                     }
@@ -258,7 +242,7 @@ namespace Assignment6
                     Console.WriteLine("\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName Name: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
+                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
                                          $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                          $"Zip: {reader["ZipCode"]}");
                     }
@@ -305,7 +289,7 @@ namespace Assignment6
                     Console.WriteLine("\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName Name: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
+                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
                                          $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                          $"Zip: {reader["ZipCode"]}");
                     }
@@ -352,7 +336,7 @@ namespace Assignment6
                     Console.WriteLine("\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName Name: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
+                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
                                          $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                          $"Zip: {reader["ZipCode"]}");
                     }
@@ -399,7 +383,7 @@ namespace Assignment6
                     Console.WriteLine("\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName Name: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
+                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
                                          $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                          $"Zip: {reader["ZipCode"]}");
                     }
@@ -446,7 +430,7 @@ namespace Assignment6
                     Console.WriteLine("\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName Name: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
+                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
                                          $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                          $"Zip: {reader["ZipCode"]}");
                     }
@@ -493,7 +477,7 @@ namespace Assignment6
                     Console.WriteLine("\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName Name: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
+                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
                                          $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                          $"Zip: {reader["ZipCode"]}");
                     }
@@ -540,7 +524,7 @@ namespace Assignment6
                     Console.WriteLine("\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName Name: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
+                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
                                          $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                          $"Zip: {reader["ZipCode"]}");
                     }
@@ -591,7 +575,7 @@ namespace Assignment6
                     Console.WriteLine("\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName Name: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
+                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
                                          $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                          $"Zip: {reader["ZipCode"]}");
                     }
@@ -640,7 +624,7 @@ namespace Assignment6
                     Console.WriteLine("\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName Name: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
+                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
                                          $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                          $"Zip: {reader["ZipCode"]}");
                     }
@@ -689,7 +673,7 @@ namespace Assignment6
                     Console.WriteLine("\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName Name: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
+                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
                                          $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                          $"Zip: {reader["ZipCode"]}");
                     }
@@ -738,7 +722,7 @@ namespace Assignment6
                     Console.WriteLine("\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName Name: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
+                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
                                          $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                          $"Zip: {reader["ZipCode"]}");
                     }
@@ -787,7 +771,7 @@ namespace Assignment6
                     Console.WriteLine("\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName Name: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
+                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
                                          $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                          $"Zip: {reader["ZipCode"]}");
                     }
@@ -836,7 +820,7 @@ namespace Assignment6
                     Console.WriteLine("\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName Name: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
+                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
                                          $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                          $"Zip: {reader["ZipCode"]}");
                     }
@@ -885,7 +869,7 @@ namespace Assignment6
                     Console.WriteLine("\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName Name: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
+                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
                                          $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                          $"Zip: {reader["ZipCode"]}");
                     }
@@ -933,7 +917,7 @@ namespace Assignment6
                     Console.WriteLine("\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName Name: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
+                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
                                          $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                          $"Zip: {reader["ZipCode"]}");
                     }

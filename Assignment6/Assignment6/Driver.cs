@@ -348,12 +348,8 @@ namespace Assignment6
                     {
                         Console.WriteLine("Enter CustomerId: ");
                         var inputCustomerId = Convert.ToInt32(Console.ReadLine());
-                        while (!update.CheckRecordById(inputCustomerId))
-                        {
-                            Console.WriteLine("Record not found.");
-                            Console.WriteLine("Enter CustomerId: ");
-                            inputCustomerId = Convert.ToInt32(Console.ReadLine());
-                        }
+                        if (!update.CheckRecordById(inputCustomerId))
+                            return;
                         Console.WriteLine();
                         update.GetUpdateFieldChoice();
                         update.UpdateFieldById(inputCustomerId);
@@ -365,14 +361,8 @@ namespace Assignment6
                         var inputFirstName = Console.ReadLine();
                         Console.WriteLine("Enter Customer LastName:");
                         var inputLastName = Console.ReadLine();
-                        while(!update.CheckRecordByName(inputFirstName, inputLastName))
-                        {
-                            Console.WriteLine("Record not found.");
-                            Console.WriteLine("Enter Customer FirstName:");
-                            inputFirstName = Console.ReadLine();
-                            Console.WriteLine("Enter Customer LastName:");
-                            inputLastName = Console.ReadLine();
-                        }
+                        if (!update.CheckRecordByName(inputFirstName, inputLastName))
+                            return;
                         Console.WriteLine();
                         update.GetUpdateFieldChoice();
                         update.UpdateFieldByName(inputFirstName, inputLastName);
