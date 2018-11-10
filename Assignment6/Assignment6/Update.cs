@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assignment6
 {
@@ -56,29 +52,21 @@ namespace Assignment6
             switch (FieldChoice)
             {
                 case 1: // FirstName
-                    UpdateFirstNameById(customerId);
-                    break;
+                    UpdateFirstNameById(customerId); break;
                 case 2: // LastName
-                    UpdateLastNameById(customerId);
-                    break;
+                    UpdateLastNameById(customerId); break;
                 case 3: // Phone
-                    UpdatePhoneById(customerId);
-                    break;
+                    UpdatePhoneById(customerId); break;
                 case 4: // Email
-                    UpdateEmailById(customerId);
-                    break;
+                    UpdateEmailById(customerId); break;
                 case 5: // Street
-                    UpdateStreetById(customerId);
-                    break;
+                    UpdateStreetById(customerId); break;
                 case 6: // City
-                    UpdateCityById(customerId);
-                    break;
+                    UpdateCityById(customerId); break;
                 case 7: // State
-                    UpdateStateById(customerId);
-                    break;
+                    UpdateStateById(customerId); break;
                 case 8: // Zip
-                    UpdateZipCodeById(customerId);
-                    break;
+                    UpdateZipCodeById(customerId); break;
             }
         }
 
@@ -87,29 +75,21 @@ namespace Assignment6
             switch (FieldChoice)
             {
                 case 1: // FirstName
-                    UpdateFirstNameByName(firstName, lastName);
-                    break;
+                    UpdateFirstNameByName(firstName, lastName); break;
                 case 2: // LastName
-                    UpdateLastNameByName(firstName, lastName);
-                    break;
+                    UpdateLastNameByName(firstName, lastName); break;
                 case 3: // Phone
-                    UpdatePhoneByName(firstName, lastName);
-                    break;
+                    UpdatePhoneByName(firstName, lastName); break;
                 case 4: // Email
-                    UpdateEmailByName(firstName, lastName);
-                    break;
+                    UpdateEmailByName(firstName, lastName); break;
                 case 5: // Street
-                    UpdateStreetByName(firstName, lastName);
-                    break;
+                    UpdateStreetByName(firstName, lastName); break;
                 case 6: // City
-                    UpdateCityByName(firstName, lastName);
-                    break;
+                    UpdateCityByName(firstName, lastName); break;
                 case 7: // State
-                    UpdateStateByName(firstName, lastName);
-                    break;
+                    UpdateStateByName(firstName, lastName); break;
                 case 8: // Zip
-                    UpdateZipCodeByName(firstName, lastName);
-                    break;
+                    UpdateZipCodeByName(firstName, lastName); break;
             }
         }
 
@@ -140,14 +120,11 @@ namespace Assignment6
                         Console.WriteLine("\n\n");
                         while (reader.Read())
                         {
-                            
                             Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName Name: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
                                               $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                               $"Zip: {reader["ZipCode"]}");
                             Console.WriteLine();
-
                         }
-
                     }
                 }
                 catch (SqlException e)
@@ -176,7 +153,6 @@ namespace Assignment6
                     connection.Open();
                     var reader = command.ExecuteReader();
                    
-
                     if (!reader.HasRows)
                     {
                         Console.WriteLine("\n\n");
@@ -202,7 +178,7 @@ namespace Assignment6
             }
         }
 
-        public void UpdateFirstNameById(Int32 CustomerId)
+        private void UpdateFirstNameById(Int32 CustomerId)
         {
             Console.WriteLine("Enter new FirstName: ");
             var inputFirstName = Console.ReadLine();
@@ -249,7 +225,7 @@ namespace Assignment6
             }
         }
 
-        public void UpdateLastNameById(Int32 CustomerId)
+        private void UpdateLastNameById(Int32 CustomerId)
         {
             Console.WriteLine("Enter new LastName: ");
             var inputLastName = Console.ReadLine();
@@ -296,7 +272,7 @@ namespace Assignment6
             }
         }
 
-        public void UpdatePhoneById(Int32 CustomerId)
+        private void UpdatePhoneById(Int32 CustomerId)
         {
             Console.WriteLine("Enter new Phone: ");
             var inputPhone = Console.ReadLine();
@@ -343,7 +319,7 @@ namespace Assignment6
             }
         }
 
-        public void UpdateEmailById(Int32 CustomerId)
+        private void UpdateEmailById(Int32 CustomerId)
         {
             Console.WriteLine("Enter new Email: ");
             var inputEmail = Console.ReadLine();
@@ -390,7 +366,7 @@ namespace Assignment6
             }
         }
 
-        public void UpdateStreetById(Int32 CustomerId)
+        private void UpdateStreetById(Int32 CustomerId)
         {
             Console.WriteLine("Enter new Street: ");
             var inputStreet = Console.ReadLine();
@@ -437,7 +413,7 @@ namespace Assignment6
             }
         }
 
-        public void UpdateCityById(Int32 CustomerId)
+        private void UpdateCityById(Int32 CustomerId)
         {
             Console.WriteLine("Enter new City: ");
             var inputCity = Console.ReadLine();
@@ -484,7 +460,7 @@ namespace Assignment6
             }
         }
 
-        public void UpdateStateById(Int32 CustomerId)
+        private void UpdateStateById(Int32 CustomerId)
         {
             Console.WriteLine("Enter new State: ");
             var inputState = Console.ReadLine();
@@ -531,7 +507,7 @@ namespace Assignment6
             }
         }
 
-        public void UpdateZipCodeById(Int32 CustomerId)
+        private void UpdateZipCodeById(Int32 CustomerId)
         {
             Console.WriteLine("Enter new ZipCode: ");
             var inputZipCode = Console.ReadLine();
@@ -579,8 +555,8 @@ namespace Assignment6
         }
 
         // ------------------- By Name -----------------------------------------//
-        
-        public void UpdateFirstNameByName(String firstName, String lastName)
+
+        private void UpdateFirstNameByName(String firstName, String lastName)
         {
             Console.WriteLine("Enter new FirstName: ");
             var inputFirstName = Console.ReadLine();
@@ -629,7 +605,7 @@ namespace Assignment6
             }
         }
 
-        public void UpdateLastNameByName(String firstName, String lastName)
+        private void UpdateLastNameByName(String firstName, String lastName)
         {
             Console.WriteLine("Enter new LastName: ");
             var inputLastName = Console.ReadLine();
@@ -678,7 +654,7 @@ namespace Assignment6
             }
         }
 
-        public void UpdatePhoneByName(String firstName, String lastName)
+        private void UpdatePhoneByName(String firstName, String lastName)
         {
             Console.WriteLine("Enter new Phone: ");
             var inputPhone = Console.ReadLine();
@@ -727,7 +703,7 @@ namespace Assignment6
             }
         }
 
-        public void UpdateEmailByName(String firstName, String lastName)
+        private void UpdateEmailByName(String firstName, String lastName)
         {
             Console.WriteLine("Enter new Email: ");
             var inputEmail = Console.ReadLine();
@@ -776,7 +752,7 @@ namespace Assignment6
             }
         }
 
-        public void UpdateStreetByName(String firstName, String lastName)
+        private void UpdateStreetByName(String firstName, String lastName)
         {
             Console.WriteLine("Enter new Street: ");
             var inputStreet = Console.ReadLine();
@@ -825,7 +801,7 @@ namespace Assignment6
             }
         }
 
-        public void UpdateCityByName(String firstName, String lastName)
+        private void UpdateCityByName(String firstName, String lastName)
         {
             Console.WriteLine("Enter new City: ");
             var inputCity = Console.ReadLine();
@@ -874,7 +850,7 @@ namespace Assignment6
             }
         }
 
-        public void UpdateStateByName(String firstName, String lastName)
+        private void UpdateStateByName(String firstName, String lastName)
         {
             Console.WriteLine("Enter new State: ");
             var inputState = Console.ReadLine();
@@ -913,7 +889,6 @@ namespace Assignment6
                                          $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                          $"Zip: {reader["ZipCode"]}");
                     }
-
                     Console.WriteLine();
                 }
                 catch (SqlException e)
@@ -923,7 +898,7 @@ namespace Assignment6
             }
         }
 
-        public void UpdateZipCodeByName(String firstName, String lastName)
+        private void UpdateZipCodeByName(String firstName, String lastName)
         {
             Console.WriteLine("Enter new ZipCode: ");
             var inputZipCode = Console.ReadLine();
@@ -962,7 +937,6 @@ namespace Assignment6
                                          $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                          $"Zip: {reader["ZipCode"]}");
                     }
-
                     Console.WriteLine();
                 }
                 catch (SqlException e)

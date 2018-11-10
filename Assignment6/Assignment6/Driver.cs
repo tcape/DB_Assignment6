@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assignment6
 {
@@ -34,28 +30,16 @@ namespace Assignment6
 
             switch (input)
             {
-                case 1:
-                    GetStaffMemberInfo();
-                    break;
-                case 2:
-                    GetStoreInfo();
-                    break;
-                case 3:
-                    GetCustomerOrderStatus();
-                    break;
-                case 4:
-                    GetProductAvailablity();
-                    break;
-                case 5:
-                    UpdateCustomerInfo();
-                    break;
-                case 6:
-                    quit = true;
-                    break; 
+                case 1: GetStaffMemberInfo(); break;
+                case 2: GetStoreInfo(); break;
+                case 3: GetCustomerOrderStatus(); break;
+                case 4: GetProductAvailablity(); break;
+                case 5: UpdateCustomerInfo(); break;
+                case 6: quit = true; break;
             }
         }
 
-        void GetStaffMemberInfo()
+        private void GetStaffMemberInfo()
         {
             // get first and last name from user
             Console.WriteLine("Enter FirstName: ");
@@ -87,7 +71,7 @@ namespace Assignment6
                         return;
                     }
 
-                    Console.WriteLine("Staff Info:\n");
+                    Console.WriteLine("\n\nStaff Info:\n");
                     while (reader.Read())
                     {
                         Console.WriteLine($"First Name: {reader["FirstName"]}\nLast Name: {reader["LastName"]}\nEmail: {reader["Email"]}\nPhone: {reader["Phone"]}");
@@ -101,7 +85,7 @@ namespace Assignment6
             }
         }
 
-        void GetStoreInfo()
+        private void GetStoreInfo()
         {
             // Ask for City/State OR StoreID
             Console.WriteLine("Search by:");
@@ -144,14 +128,12 @@ namespace Assignment6
                                     Console.WriteLine("Store not found.");
                                     return;
                                 }
-                                Console.WriteLine("Store Info:\n");
+                                Console.WriteLine("\n\nStore Info:\n");
                                 while (reader.Read())
                                 {
                                     Console.WriteLine($"Store Name: {reader["StoreName"]}\nPhone: {reader["Phone"]}\nEmail: {reader["Email"]}\n" +
                                         $"City: {reader["City"]}\nState: {reader["State"]}\nZip: {reader["ZipCode"]}\n");
                                 }
-                                // what if not found?
-                                
                             }
                             catch (SqlException e)
                             {
@@ -185,13 +167,12 @@ namespace Assignment6
                                     return;
                                 }
 
-                                Console.WriteLine("Store Info:\n");
+                                Console.WriteLine("\n\nStore Info:\n");
                                 while (reader.Read())
                                 {
                                     Console.WriteLine($"Store Name: {reader["StoreName"]}\nPhone: {reader["Phone"]}\nEmail: {reader["Email"]}\n" +
                                         $"City: {reader["City"]}\nState: {reader["State"]}\nZip: {reader["ZipCode"]}\n");
                                 }
-
                             }
                             catch (SqlException e)
                             {
@@ -204,7 +185,7 @@ namespace Assignment6
             }
         }
 
-        void GetCustomerOrderStatus()
+        private void GetCustomerOrderStatus()
         {
             Console.WriteLine("Enter OrderID: ");
             var orderID = Convert.ToInt32(Console.ReadLine());
@@ -229,25 +210,30 @@ namespace Assignment6
                         return;
                     }
 
-                    Console.WriteLine("Order Info:\n");
+                    Console.WriteLine("\n\nOrder Info:\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"OrderId: {reader["OrderId"]}\nStatus: {reader["OrderStatus"]}\nOrder Date: {reader["OrderDate"]}\n" +
+                        String statusStr = null;
+                        var status = Convert.ToInt32($"{ reader["OrderStatus"] }");
+                        switch(status)
+                        {
+                            case 1:  statusStr = "Ordered"; break;
+                            case 2:  statusStr = "Processed"; break;
+                            case 3:  statusStr = "Shipped"; break;
+                            case 4:  statusStr = "Delivered"; break;
+                        }
+                        Console.WriteLine($"OrderId: {reader["OrderId"]}\nStatus: " + statusStr + $"\nOrder Date: {reader["OrderDate"]}\n" +
                             $"Required Date: {reader["RequiredDate"]}\nShipped Date: {reader["ShippedDate"]}");
                     }
-                    // what if not found?
-                    
-
                 }
                 catch (SqlException e)
                 {
                     Console.WriteLine("SQL Error" + e.ToString());
                 }
             }
-
         }
 
-        void GetProductAvailablity()
+        private void GetProductAvailablity()
         {
             Console.WriteLine("Search by:");
             Console.WriteLine("1) Product Id");
@@ -289,17 +275,14 @@ namespace Assignment6
                                     return;
                                 }
 
-                                Console.WriteLine("Product Availability:\n");
+                                Console.WriteLine("\n\nProduct Availability:\n");
                                 while (reader.Read())
                                 {
-
                                     Console.WriteLine($"Quantity: {reader["Quantity"]}\nStore Name: {reader["StoreName"]}\nPhone: {reader["Phone"]}\n" +
                                         $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                         $"Zip: {reader["ZipCode"]}");
                                     Console.WriteLine();
-
                                 }
-                            
                             }
                             catch (SqlException e)
                             {
@@ -336,17 +319,14 @@ namespace Assignment6
                                     return;
                                 }
 
-                                Console.WriteLine("Product Availability:\n");
+                                Console.WriteLine("\n\nProduct Availability:\n");
                                 while (reader.Read())
                                 {
-
                                     Console.WriteLine($"Quantity: {reader["Quantity"]}\nStore Name: {reader["StoreName"]}\nPhone: {reader["Phone"]}\n" +
                                         $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
                                         $"Zip: {reader["ZipCode"]}");
                                     Console.WriteLine();
-
                                 }
-                                
                             }
                             catch (SqlException e)
                             {
@@ -358,7 +338,7 @@ namespace Assignment6
             }
         }
 
-        void UpdateCustomerInfo()
+        private void UpdateCustomerInfo()
         {
             var update = new Update();
             update.GetSearchChoice();
@@ -374,7 +354,6 @@ namespace Assignment6
                             Console.WriteLine("Enter CustomerId: ");
                             inputCustomerId = Convert.ToInt32(Console.ReadLine());
                         }
-                        //update.CustomerId.Equals(inputCustomerId);
                         Console.WriteLine();
                         update.GetUpdateFieldChoice();
                         update.UpdateFieldById(inputCustomerId);
@@ -394,16 +373,12 @@ namespace Assignment6
                             Console.WriteLine("Enter Customer LastName:");
                             inputLastName = Console.ReadLine();
                         }
-                        //update.FirstName.Equals(inputFirstName);
-                        //update.LastName.Equals(inputLastName);
                         Console.WriteLine();
                         update.GetUpdateFieldChoice();
                         update.UpdateFieldByName(inputFirstName, inputLastName);
                     }
                     break;
             }
-            
         }
-
     }
 }
