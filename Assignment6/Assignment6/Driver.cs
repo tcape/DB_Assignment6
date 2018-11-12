@@ -63,6 +63,7 @@ namespace Assignment6
                 try
                 {
                     connection.Open();
+
                     var reader = command.ExecuteReader();
 
                     if(!reader.HasRows)
@@ -74,7 +75,11 @@ namespace Assignment6
                     Console.WriteLine("\n\nStaff Info:\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"First Name: {reader["FirstName"]}\nLast Name: {reader["LastName"]}\nEmail: {reader["Email"]}\nPhone: {reader["Phone"]}");
+                        Console.WriteLine(
+                            $"First Name: {reader["FirstName"]}\n" +
+                            $"Last Name: {reader["LastName"]}\n" +
+                            $"Email: {reader["Email"]}\n" +
+                            $"Phone: {reader["Phone"]}");
                     }
                 }
                 catch (SqlException e)
@@ -131,8 +136,13 @@ namespace Assignment6
                                 Console.WriteLine("\n\nStore Info:\n");
                                 while (reader.Read())
                                 {
-                                    Console.WriteLine($"Store Name: {reader["StoreName"]}\nPhone: {reader["Phone"]}\nEmail: {reader["Email"]}\n" +
-                                        $"City: {reader["City"]}\nState: {reader["State"]}\nZip: {reader["ZipCode"]}\n");
+                                    Console.WriteLine(
+                                        $"Store Name: {reader["StoreName"]}\n" +
+                                        $"Phone: {reader["Phone"]}\n" +
+                                        $"Email: {reader["Email"]}\n" +
+                                        $"City: {reader["City"]}\n" +
+                                        $"State: {reader["State"]}\n" +
+                                        $"Zip: {reader["ZipCode"]}\n");
                                 }
                             }
                             catch (SqlException e)
@@ -170,8 +180,13 @@ namespace Assignment6
                                 Console.WriteLine("\n\nStore Info:\n");
                                 while (reader.Read())
                                 {
-                                    Console.WriteLine($"Store Name: {reader["StoreName"]}\nPhone: {reader["Phone"]}\nEmail: {reader["Email"]}\n" +
-                                        $"City: {reader["City"]}\nState: {reader["State"]}\nZip: {reader["ZipCode"]}\n");
+                                    Console.WriteLine(
+                                        $"Store Name: {reader["StoreName"]}\n" +
+                                        $"Phone: {reader["Phone"]}\n" +
+                                        $"Email: {reader["Email"]}\n" +
+                                        $"City: {reader["City"]}\n" +
+                                        $"State: {reader["State"]}\n" +
+                                        $"Zip: {reader["ZipCode"]}\n");
                                 }
                             }
                             catch (SqlException e)
@@ -213,7 +228,7 @@ namespace Assignment6
                     Console.WriteLine("\n\nOrder Info:\n");
                     while (reader.Read())
                     {
-                        String statusStr = null;
+                        string statusStr = null;
                         var status = Convert.ToInt32($"{ reader["OrderStatus"] }");
                         switch(status)
                         {
@@ -222,8 +237,12 @@ namespace Assignment6
                             case 3:  statusStr = "Shipped"; break;
                             case 4:  statusStr = "Delivered"; break;
                         }
-                        Console.WriteLine($"OrderId: {reader["OrderId"]}\nStatus: " + statusStr + $"\nOrder Date: {reader["OrderDate"]}\n" +
-                            $"Required Date: {reader["RequiredDate"]}\nShipped Date: {reader["ShippedDate"]}");
+                        Console.WriteLine(
+                            $"OrderId: {reader["OrderId"]}\n" +
+                            $"Status: " + statusStr + $"\n" +
+                            $"Order Date: {reader["OrderDate"]}\n" +
+                            $"Required Date: {reader["RequiredDate"]}\n" +
+                            $"Shipped Date: {reader["ShippedDate"]}");
                     }
                 }
                 catch (SqlException e)
@@ -252,11 +271,13 @@ namespace Assignment6
                         Console.WriteLine("Enter ProductId: ");
                         var inputProductId = Convert.ToInt32(Console.ReadLine());
 
-                        var queryString = "SELECT stocks.Quantity, stores.StoreName, stores.Phone, stores.Email, stores.Street, stores.City, stores.State, stores.ZipCode" +
+                        var queryString = "SELECT stocks.Quantity, stores.StoreName, stores.Phone," +
+                            " stores.Email, stores.Street, stores.City, stores.State, stores.ZipCode" +
                             " FROM Production.Products p JOIN Production.Stocks stocks ON p.ProductId = stocks.ProductId" +
                             " JOIN Sales.Stores stores ON stores.StoreId = stocks.StoreId " +
                             " WHERE p.ProductId = @inputProductId" +
-                            " GROUP BY Quantity, Stores.StoreName, stores.Phone, stores.Email, stores.Street, stores.City, stores.State, stores.ZipCode";
+                            " GROUP BY Quantity, Stores.StoreName, stores.Phone, stores.Email," +
+                            " stores.Street, stores.City, stores.State, stores.ZipCode";
 
                         using (var connection = new SqlConnection(connectString))
                         {
@@ -278,10 +299,14 @@ namespace Assignment6
                                 Console.WriteLine("\n\nProduct Availability:\n");
                                 while (reader.Read())
                                 {
-                                    Console.WriteLine($"Quantity: {reader["Quantity"]}\nStore Name: {reader["StoreName"]}\nPhone: {reader["Phone"]}\n" +
-                                        $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                        $"Zip: {reader["ZipCode"]}");
-                                    Console.WriteLine();
+                                    Console.WriteLine(
+                                        $"Quantity: {reader["Quantity"]}\n" +
+                                        $"Store Name: {reader["StoreName"]}\nPhone: {reader["Phone"]}\n" +
+                                        $"Email: {reader["Email"]}\n" +
+                                        $"Street: {reader["Street"]}\n" +
+                                        $"City: {reader["City"]}\n" +
+                                        $"State: {reader["State"]}\n" +
+                                        $"Zip: {reader["ZipCode"]}\n");
                                 }
                             }
                             catch (SqlException e)
@@ -296,11 +321,14 @@ namespace Assignment6
                         Console.WriteLine("Enter Product Name: ");
                         var inputProductName = Console.ReadLine();
 
-                        var queryString = "SELECT stocks.Quantity, stores.StoreName, stores.Phone, stores.Email, stores.Street, stores.City, stores.State, stores.ZipCode" +
-                            " FROM Production.Products p JOIN Production.Stocks stocks ON p.ProductId = stocks.ProductId" +
-                            " JOIN Sales.Stores stores ON stores.StoreId = stocks.StoreId " +
+                        var queryString = "SELECT stocks.Quantity, stores.StoreName, stores.Phone, stores.Email," +
+                            " stores.Street, stores.City, stores.State, stores.ZipCode" +
+                            " FROM Production.Products p" +
+                            " JOIN Production.Stocks stocks ON p.ProductId = stocks.ProductId" +
+                            " JOIN Sales.Stores stores ON stores.StoreId = stocks.StoreId" +
                             " WHERE p.ProductName = @inputProductName" +
-                            " GROUP BY Quantity, Stores.StoreName, stores.Phone, stores.Email, stores.Street, stores.City, stores.State, stores.ZipCode";
+                            " GROUP BY Quantity, Stores.StoreName, stores.Phone, stores.Email," +
+                            " stores.Street, stores.City, stores.State, stores.ZipCode";
 
                         using (var connection = new SqlConnection(connectString))
                         {
@@ -322,10 +350,15 @@ namespace Assignment6
                                 Console.WriteLine("\n\nProduct Availability:\n");
                                 while (reader.Read())
                                 {
-                                    Console.WriteLine($"Quantity: {reader["Quantity"]}\nStore Name: {reader["StoreName"]}\nPhone: {reader["Phone"]}\n" +
-                                        $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                        $"Zip: {reader["ZipCode"]}");
-                                    Console.WriteLine();
+                                    Console.WriteLine(
+                                        $"Quantity: {reader["Quantity"]}\n" +
+                                        $"Store Name: {reader["StoreName"]}\n" +
+                                        $"Phone: {reader["Phone"]}\n" +
+                                        $"Email: {reader["Email"]}\n" +
+                                        $"Street: {reader["Street"]}\n" +
+                                        $"City: {reader["City"]}\n" +
+                                        $"State: {reader["State"]}\n" +
+                                        $"Zip: {reader["ZipCode"]}\n");
                                 }
                             }
                             catch (SqlException e)

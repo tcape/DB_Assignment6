@@ -95,8 +95,7 @@ namespace Assignment6
 
                     if (!reader.HasRows)
                     {
-                        Console.WriteLine("\n\n");
-                        Console.WriteLine("Customer not found.");
+                        Console.WriteLine("\n\nCustomer not found.\n");
                         return false;
                     }
                     else
@@ -104,10 +103,15 @@ namespace Assignment6
                         Console.WriteLine("\n\n");
                         while (reader.Read())
                         {
-                            Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
-                                              $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                              $"Zip: {reader["ZipCode"]}");
-                            Console.WriteLine();
+                            Console.WriteLine(
+                                $"FirstName: {reader["FirstName"]}\n" +
+                                $"LastName: {reader["LastName"]}\n" +
+                                $"Phone: {reader["Phone"]}\n" +
+                                $"Email: {reader["Email"]}\n" +
+                                $"Street: {reader["Street"]}\n" +
+                                $"City: {reader["City"]}\n" +
+                                $"State: {reader["State"]}\n" +
+                                $"Zip: {reader["ZipCode"]}\n");
                         }
                     }
                 }
@@ -148,10 +152,15 @@ namespace Assignment6
                     while (reader.Read())
                     {
                        
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
-                                          $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                          $"Zip: {reader["ZipCode"]}");
-                        Console.WriteLine();
+                        Console.WriteLine(
+                            $"FirstName: {reader["FirstName"]}\n" +
+                            $"LastName: {reader["LastName"]}\n" +
+                            $"Phone: {reader["Phone"]}\n" +
+                            $"Email: {reader["Email"]}\n" +
+                            $"Street: {reader["Street"]}\n" +
+                            $"City: {reader["City"]}\n" +
+                            $"State: {reader["State"]}\n" +
+                            $"Zip: {reader["ZipCode"]}\n");
                     }
                 }
                 catch (SqlException e)
@@ -190,17 +199,19 @@ namespace Assignment6
                     connection.Open();
                     var rows = updateCommand.ExecuteNonQuery();
                     var reader = queryCommand.ExecuteReader();
-                    Console.WriteLine("\n\n");
-                    Console.WriteLine(rows + " rows affected.");
-                    Console.WriteLine("\n\n");
+                    Console.WriteLine("\n\n" + rows + " rows affected.\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
-                                         $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                         $"Zip: {reader["ZipCode"]}");
+                        Console.WriteLine(
+                            $"FirstName: {reader["FirstName"]}\n" +
+                            $"LastName: {reader["LastName"]}\n" +
+                            $"Phone: {reader["Phone"]}\n" +
+                            $"Email: {reader["Email"]}\n" +
+                            $"Street: {reader["Street"]}\n" +
+                            $"City: {reader["City"]}\n" +
+                            $"State: {reader["State"]}\n" +
+                            $"Zip: {reader["ZipCode"]}\n");
                     }
-                    
-                    Console.WriteLine();
                 }
                 catch(SqlException e)
                 {
@@ -237,17 +248,19 @@ namespace Assignment6
                     connection.Open();
                     var rows = updateCommand.ExecuteNonQuery();
                     var reader = queryCommand.ExecuteReader();
-                    Console.WriteLine("\n\n");
-                    Console.WriteLine(rows + " rows affected.");
-                    Console.WriteLine("\n\n");
+                    Console.WriteLine("\n\n" + rows + " rows affected.\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
-                                         $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                         $"Zip: {reader["ZipCode"]}");
+                        Console.WriteLine(
+                            $"FirstName: {reader["FirstName"]}\n" +
+                            $"LastName: {reader["LastName"]}\n" +
+                            $"Phone: {reader["Phone"]}\n" +
+                            $"Email: {reader["Email"]}\n" +
+                            $"Street: {reader["Street"]}\n" +
+                            $"City: {reader["City"]}\n" +
+                            $"State: {reader["State"]}\n" +
+                            $"Zip: {reader["ZipCode"]}\n");
                     }
-
-                    Console.WriteLine();
                 }
                 catch (SqlException e)
                 {
@@ -284,17 +297,19 @@ namespace Assignment6
                     connection.Open();
                     var rows = updateCommand.ExecuteNonQuery();
                     var reader = queryCommand.ExecuteReader();
-                    Console.WriteLine("\n\n");
-                    Console.WriteLine(rows + " rows affected.");
-                    Console.WriteLine("\n\n");
+                    Console.WriteLine("\n\n" + rows + " rows affected.\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
-                                         $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                         $"Zip: {reader["ZipCode"]}");
+                        Console.WriteLine(
+                            $"FirstName: {reader["FirstName"]}\n" +
+                            $"LastName: {reader["LastName"]}\n" +
+                            $"Phone: {reader["Phone"]}\n" +
+                            $"Email: {reader["Email"]}\n" +
+                            $"Street: {reader["Street"]}\n" +
+                            $"City: {reader["City"]}\n" +
+                            $"State: {reader["State"]}\n" +
+                            $"Zip: {reader["ZipCode"]}\n");
                     }
-
-                    Console.WriteLine();
                 }
                 catch (SqlException e)
                 {
@@ -331,17 +346,19 @@ namespace Assignment6
                     connection.Open();
                     var rows = updateCommand.ExecuteNonQuery();
                     var reader = queryCommand.ExecuteReader();
-                    Console.WriteLine("\n\n");
-                    Console.WriteLine(rows + " rows affected.");
-                    Console.WriteLine("\n\n");
+                    Console.WriteLine("\n\n" + rows + " rows affected.\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
-                                         $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                         $"Zip: {reader["ZipCode"]}");
+                        Console.WriteLine(
+                            $"FirstName: {reader["FirstName"]}\n" +
+                            $"LastName: {reader["LastName"]}\n" +
+                            $"Phone: {reader["Phone"]}\n" +
+                            $"Email: {reader["Email"]}\n" +
+                            $"Street: {reader["Street"]}\n" +
+                            $"City: {reader["City"]}\n" +
+                            $"State: {reader["State"]}\n" +
+                            $"Zip: {reader["ZipCode"]}\n");
                     }
-
-                    Console.WriteLine();
                 }
                 catch (SqlException e)
                 {
@@ -378,17 +395,19 @@ namespace Assignment6
                     connection.Open();
                     var rows = updateCommand.ExecuteNonQuery();
                     var reader = queryCommand.ExecuteReader();
-                    Console.WriteLine("\n\n");
-                    Console.WriteLine(rows + " rows affected.");
-                    Console.WriteLine("\n\n");
+                    Console.WriteLine("\n\n" + rows + " rows affected.\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
-                                         $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                         $"Zip: {reader["ZipCode"]}");
+                        Console.WriteLine(
+                            $"FirstName: {reader["FirstName"]}\n" +
+                            $"LastName: {reader["LastName"]}\n" +
+                            $"Phone: {reader["Phone"]}\n" +
+                            $"Email: {reader["Email"]}\n" +
+                            $"Street: {reader["Street"]}\n" +
+                            $"City: {reader["City"]}\n" +
+                            $"State: {reader["State"]}\n" +
+                            $"Zip: {reader["ZipCode"]}\n");
                     }
-
-                    Console.WriteLine();
                 }
                 catch (SqlException e)
                 {
@@ -425,17 +444,19 @@ namespace Assignment6
                     connection.Open();
                     var rows = updateCommand.ExecuteNonQuery();
                     var reader = queryCommand.ExecuteReader();
-                    Console.WriteLine("\n\n");
-                    Console.WriteLine(rows + " rows affected.");
-                    Console.WriteLine("\n\n");
+                    Console.WriteLine("\n\n" + rows + " rows affected.\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
-                                         $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                         $"Zip: {reader["ZipCode"]}");
+                        Console.WriteLine(
+                            $"FirstName: {reader["FirstName"]}\n" +
+                            $"LastName: {reader["LastName"]}\n" +
+                            $"Phone: {reader["Phone"]}\n" +
+                            $"Email: {reader["Email"]}\n" +
+                            $"Street: {reader["Street"]}\n" +
+                            $"City: {reader["City"]}\n" +
+                            $"State: {reader["State"]}\n" +
+                            $"Zip: {reader["ZipCode"]}\n");
                     }
-
-                    Console.WriteLine();
                 }
                 catch (SqlException e)
                 {
@@ -472,17 +493,19 @@ namespace Assignment6
                     connection.Open();
                     var rows = updateCommand.ExecuteNonQuery();
                     var reader = queryCommand.ExecuteReader();
-                    Console.WriteLine("\n\n");
-                    Console.WriteLine(rows + " rows affected.");
-                    Console.WriteLine("\n\n");
+                    Console.WriteLine("\n\n" + rows + " rows affected.\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
-                                         $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                         $"Zip: {reader["ZipCode"]}");
+                        Console.WriteLine(
+                            $"FirstName: {reader["FirstName"]}\n" +
+                            $"LastName: {reader["LastName"]}\n" +
+                            $"Phone: {reader["Phone"]}\n" +
+                            $"Email: {reader["Email"]}\n" +
+                            $"Street: {reader["Street"]}\n" +
+                            $"City: {reader["City"]}\n" +
+                            $"State: {reader["State"]}\n" +
+                            $"Zip: {reader["ZipCode"]}\n");
                     }
-
-                    Console.WriteLine();
                 }
                 catch (SqlException e)
                 {
@@ -519,17 +542,19 @@ namespace Assignment6
                     connection.Open();
                     var rows = updateCommand.ExecuteNonQuery();
                     var reader = queryCommand.ExecuteReader();
-                    Console.WriteLine("\n\n");
-                    Console.WriteLine(rows + " rows affected.");
-                    Console.WriteLine("\n\n");
+                    Console.WriteLine("\n\n" + rows + " rows affected.\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
-                                         $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                         $"Zip: {reader["ZipCode"]}");
+                        Console.WriteLine(
+                            $"FirstName: {reader["FirstName"]}\n" +
+                            $"LastName: {reader["LastName"]}\n" +
+                            $"Phone: {reader["Phone"]}\n" +
+                            $"Email: {reader["Email"]}\n" +
+                            $"Street: {reader["Street"]}\n" +
+                            $"City: {reader["City"]}\n" +
+                            $"State: {reader["State"]}\n" +
+                            $"Zip: {reader["ZipCode"]}\n");
                     }
-
-                    Console.WriteLine();
                 }
                 catch (SqlException e)
                 {
@@ -570,17 +595,19 @@ namespace Assignment6
                     connection.Open();
                     var rows = updateCommand.ExecuteNonQuery();
                     var reader = queryCommand.ExecuteReader();
-                    Console.WriteLine("\n\n");
-                    Console.WriteLine(rows + " rows affected.");
-                    Console.WriteLine("\n\n");
+                    Console.WriteLine("\n\n" + rows + " rows affected.\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
-                                         $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                         $"Zip: {reader["ZipCode"]}");
+                        Console.WriteLine(
+                            $"FirstName: {reader["FirstName"]}\n" +
+                            $"LastName: {reader["LastName"]}\n" +
+                            $"Phone: {reader["Phone"]}\n" +
+                            $"Email: {reader["Email"]}\n" +
+                            $"Street: {reader["Street"]}\n" +
+                            $"City: {reader["City"]}\n" +
+                            $"State: {reader["State"]}\n" +
+                            $"Zip: {reader["ZipCode"]}\n");
                     }
-
-                    Console.WriteLine();
                 }
                 catch (SqlException e)
                 {
@@ -619,17 +646,19 @@ namespace Assignment6
                     connection.Open();
                     var rows = updateCommand.ExecuteNonQuery();
                     var reader = queryCommand.ExecuteReader();
-                    Console.WriteLine("\n\n");
-                    Console.WriteLine(rows + " rows affected.");
-                    Console.WriteLine("\n\n");
+                    Console.WriteLine("\n\n" + rows + " rows affected.\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
-                                         $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                         $"Zip: {reader["ZipCode"]}");
+                        Console.WriteLine(
+                            $"FirstName: {reader["FirstName"]}\n" +
+                            $"LastName: {reader["LastName"]}\n" +
+                            $"Phone: {reader["Phone"]}\n" +
+                            $"Email: {reader["Email"]}\n" +
+                            $"Street: {reader["Street"]}\n" +
+                            $"City: {reader["City"]}\n" +
+                            $"State: {reader["State"]}\n" +
+                            $"Zip: {reader["ZipCode"]}\n");
                     }
-
-                    Console.WriteLine();
                 }
                 catch (SqlException e)
                 {
@@ -668,17 +697,19 @@ namespace Assignment6
                     connection.Open();
                     var rows = updateCommand.ExecuteNonQuery();
                     var reader = queryCommand.ExecuteReader();
-                    Console.WriteLine("\n\n");
-                    Console.WriteLine(rows + " rows affected.");
-                    Console.WriteLine("\n\n");
+                    Console.WriteLine("\n\n" + rows + " rows affected.\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
-                                         $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                         $"Zip: {reader["ZipCode"]}");
+                        Console.WriteLine(
+                            $"FirstName: {reader["FirstName"]}\n" +
+                            $"LastName: {reader["LastName"]}\n" +
+                            $"Phone: {reader["Phone"]}\n" +
+                            $"Email: {reader["Email"]}\n" +
+                            $"Street: {reader["Street"]}\n" +
+                            $"City: {reader["City"]}\n" +
+                            $"State: {reader["State"]}\n" +
+                            $"Zip: {reader["ZipCode"]}\n");
                     }
-
-                    Console.WriteLine();
                 }
                 catch (SqlException e)
                 {
@@ -717,17 +748,19 @@ namespace Assignment6
                     connection.Open();
                     var rows = updateCommand.ExecuteNonQuery();
                     var reader = queryCommand.ExecuteReader();
-                    Console.WriteLine("\n\n");
-                    Console.WriteLine(rows + " rows affected.");
-                    Console.WriteLine("\n\n");
+                    Console.WriteLine("\n\n" + rows + " rows affected.\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
-                                         $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                         $"Zip: {reader["ZipCode"]}");
+                        Console.WriteLine(
+                            $"FirstName: {reader["FirstName"]}\n" +
+                            $"LastName: {reader["LastName"]}\n" +
+                            $"Phone: {reader["Phone"]}\n" +
+                            $"Email: {reader["Email"]}\n" +
+                            $"Street: {reader["Street"]}\n" +
+                            $"City: {reader["City"]}\n" +
+                            $"State: {reader["State"]}\n" +
+                            $"Zip: {reader["ZipCode"]}\n");
                     }
-
-                    Console.WriteLine();
                 }
                 catch (SqlException e)
                 {
@@ -766,17 +799,19 @@ namespace Assignment6
                     connection.Open();
                     var rows = updateCommand.ExecuteNonQuery();
                     var reader = queryCommand.ExecuteReader();
-                    Console.WriteLine("\n\n");
-                    Console.WriteLine(rows + " rows affected.");
-                    Console.WriteLine("\n\n");
+                    Console.WriteLine("\n\n" + rows + " rows affected.\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
-                                         $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                         $"Zip: {reader["ZipCode"]}");
+                        Console.WriteLine(
+                            $"FirstName: {reader["FirstName"]}\n" +
+                            $"LastName: {reader["LastName"]}\n" +
+                            $"Phone: {reader["Phone"]}\n" +
+                            $"Email: {reader["Email"]}\n" +
+                            $"Street: {reader["Street"]}\n" +
+                            $"City: {reader["City"]}\n" +
+                            $"State: {reader["State"]}\n" +
+                            $"Zip: {reader["ZipCode"]}\n");
                     }
-
-                    Console.WriteLine();
                 }
                 catch (SqlException e)
                 {
@@ -815,17 +850,19 @@ namespace Assignment6
                     connection.Open();
                     var rows = updateCommand.ExecuteNonQuery();
                     var reader = queryCommand.ExecuteReader();
-                    Console.WriteLine("\n\n");
-                    Console.WriteLine(rows + " rows affected.");
-                    Console.WriteLine("\n\n");
+                    Console.WriteLine("\n\n" + rows + " rows affected.\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
-                                         $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                         $"Zip: {reader["ZipCode"]}");
+                        Console.WriteLine(
+                            $"FirstName: {reader["FirstName"]}\n" +
+                            $"LastName: {reader["LastName"]}\n" +
+                            $"Phone: {reader["Phone"]}\n" +
+                            $"Email: {reader["Email"]}\n" +
+                            $"Street: {reader["Street"]}\n" +
+                            $"City: {reader["City"]}\n" +
+                            $"State: {reader["State"]}\n" +
+                            $"Zip: {reader["ZipCode"]}\n");
                     }
-
-                    Console.WriteLine();
                 }
                 catch (SqlException e)
                 {
@@ -867,13 +904,19 @@ namespace Assignment6
                     Console.WriteLine("\n\n");
                     Console.WriteLine(rows + " rows affected.");
                     Console.WriteLine("\n\n");
+                    Console.WriteLine("\n\n" + rows + " rows affected.\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
-                                         $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                         $"Zip: {reader["ZipCode"]}");
+                        Console.WriteLine(
+                            $"FirstName: {reader["FirstName"]}\n" +
+                            $"LastName: {reader["LastName"]}\n" +
+                            $"Phone: {reader["Phone"]}\n" +
+                            $"Email: {reader["Email"]}\n" +
+                            $"Street: {reader["Street"]}\n" +
+                            $"City: {reader["City"]}\n" +
+                            $"State: {reader["State"]}\n" +
+                            $"Zip: {reader["ZipCode"]}\n");
                     }
-                    Console.WriteLine();
                 }
                 catch (SqlException e)
                 {
@@ -915,13 +958,19 @@ namespace Assignment6
                     Console.WriteLine("\n\n");
                     Console.WriteLine(rows + " rows affected.");
                     Console.WriteLine("\n\n");
+                    Console.WriteLine("\n\n" + rows + " rows affected.\n\n");
                     while (reader.Read())
                     {
-                        Console.WriteLine($"FirstName: {reader["FirstName"]}\nLastName: {reader["LastName"]}\nPhone: {reader["Phone"]}\n" +
-                                         $"Email: {reader["Email"]}\nStreet: {reader["Street"]}\nCity: {reader["City"]}\nState: {reader["State"]}\n" +
-                                         $"Zip: {reader["ZipCode"]}");
+                        Console.WriteLine(
+                            $"FirstName: {reader["FirstName"]}\n" +
+                            $"LastName: {reader["LastName"]}\n" +
+                            $"Phone: {reader["Phone"]}\n" +
+                            $"Email: {reader["Email"]}\n" +
+                            $"Street: {reader["Street"]}\n" +
+                            $"City: {reader["City"]}\n" +
+                            $"State: {reader["State"]}\n" +
+                            $"Zip: {reader["ZipCode"]}\n");
                     }
-                    Console.WriteLine();
                 }
                 catch (SqlException e)
                 {
